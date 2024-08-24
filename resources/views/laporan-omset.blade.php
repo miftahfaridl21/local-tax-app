@@ -73,7 +73,7 @@
             @foreach($laporan as $rprt)
             <tr>
                 <td>{{ $rprt->tgl_lapor }}</td>
-                <td>{{ $rprt->omset_harian }}</td>
+                <td>{{ number_format($rprt->omset_harian) }}</td>
                 <td>{{ number_format($rprt->pajak) }}</td>
             </tr>
             @php $total += $rprt->pajak @endphp
