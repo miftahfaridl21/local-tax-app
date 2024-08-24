@@ -2,26 +2,26 @@
 
 namespace App\Policies;
 
-use App\Models\ObjekPajak;
+use App\Models\LaporPajak;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class ObjekPajakPolicy
+class LaporPajakPolicy
 {
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return $user->role == 'admin';
+        return $user->role == 'wp'; 
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, ObjekPajak $objekPajak): bool
+    public function view(User $user, LaporPajak $laporPajak): bool
     {
-        return true;
+        return $user->role == 'wp';
     }
 
     /**
@@ -29,21 +29,21 @@ class ObjekPajakPolicy
      */
     public function create(User $user): bool
     {
-        return $user->role == 'admin';
+        return $user->role == 'wp';
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, ObjekPajak $objekPajak): bool
+    public function update(User $user, LaporPajak $laporPajak): bool
     {
-        return $user->role == 'admin';
+        return $user->role == 'wp';
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, ObjekPajak $objekPajak): bool
+    public function delete(User $user, LaporPajak $laporPajak): bool
     {
         return false;
     }
@@ -56,16 +56,16 @@ class ObjekPajakPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, ObjekPajak $objekPajak): bool
+    public function restore(User $user, LaporPajak $laporPajak): bool
     {
-        return true;
+        return false;
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, ObjekPajak $objekPajak): bool
+    public function forceDelete(User $user, LaporPajak $laporPajak): bool
     {
-        return true;
+        return false;
     }
 }

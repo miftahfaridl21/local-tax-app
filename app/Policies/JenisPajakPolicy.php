@@ -45,12 +45,12 @@ class JenisPajakPolicy
      */
     public function delete(User $user, JenisPajak $jenisPajak): bool
     {
-        return $user->role == 'admin';
+        return false;
     }
 
     public function deleteAny(User $user): bool
     {
-        return $user->role == 'admin';
+        return false;
     }
 
     /**

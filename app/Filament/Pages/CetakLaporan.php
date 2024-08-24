@@ -23,6 +23,8 @@ class CetakLaporan extends Page implements HasForms
 
     protected static string $view = 'filament.pages.cetak-laporan';
 
+    //protected static bool $isDiscovered = false;
+
     public $periode = '';
     public $objekpajak = '';
  
