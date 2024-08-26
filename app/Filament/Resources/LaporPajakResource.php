@@ -37,7 +37,7 @@ class LaporPajakResource extends Resource
                 ->relationship(
                     name: 'objek',
                     titleAttribute: 'op_nama',
-                    modifyQueryUsing: fn (Builder $query) => $query->where('user_id', auth()->id())
+                    modifyQueryUsing: fn (Builder $query) => $query->where('user_id', auth()->id())->where('op_status', 1)
                 ),
                 Forms\Components\Select::make('jenis_id')
                 ->label('Jenis Pajak')

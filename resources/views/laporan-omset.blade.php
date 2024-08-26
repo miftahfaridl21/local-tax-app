@@ -22,6 +22,7 @@
         .details {
             width: 100%;
             border-collapse: collapse;
+            font-size: 7pt;
         }
         .details th, .details td {
             border: 1px solid #000;
@@ -32,14 +33,13 @@
 </head>
 <body>
     <div class="header">
-        <p style="font-size: 20px">PEMERINTAH KOTA PROBOLINGGO</p>
+        <p style="font-size: 18px">PEMERINTAH KOTA PROBOLINGGO</p>
         <p style="font-size: 16px">BADAN PENDAPATAN, PENGELOLAAN KEUANGAN, DAN ASET DAERAH</p>
-        <p style="font-size: 14px">Jalan Panglima Sudirman No.19 Telp. (0335) 436437 Kodepos 67213</p>
+        <p style="font-size: 12px">Jalan Panglima Sudirman No.19 Telp. (0335) 436437 Kode pos 67213</p>
     </div>
     <hr>
-    <br><br>
     <div>
-        <table style="font-size: 10pt; width: 100%">
+        <table style="font-size: 9pt; width: 100%">
             <tr>
                 <td style="width: 20%">Jenis Pajak</td>
                 <td style="align-items: center; width: 5%">:</td>
@@ -66,22 +66,22 @@
         <table class="details">
             <tr>
                 <th>TGL LAPOR</th>
-                <th>OMSET HARIAN</th>
-                <th>PAJAK</th>
+                <th style="text-align:right">OMSET HARIAN (Rp)</th>
+                <th style="text-align:right">PAJAK (Rp)</th>
             </tr>
             @php $total = 0; @endphp
             @foreach($laporan as $rprt)
             <tr>
                 <td>{{ $rprt->tgl_lapor }}</td>
-                <td>{{ number_format($rprt->omset_harian) }}</td>
-                <td>{{ number_format($rprt->pajak) }}</td>
+                <td style="text-align:right">{{ number_format($rprt->omset_harian) }}</td>
+                <td style="text-align:right">{{ number_format($rprt->pajak) }}</td>
             </tr>
             @php $total += $rprt->pajak @endphp
             @endforeach
             <tfoot class="footer">
                 <tr>
                     <td colspan="2">Total Pajak</td>
-                    <td>{{ number_format($total) }}</td>
+                    <td style="text-align:right; font-weight: bold">{{ number_format($total) }}</td>
                 </tr>
             </tfoot>
         </table>

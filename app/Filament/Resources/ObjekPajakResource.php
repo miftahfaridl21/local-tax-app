@@ -46,7 +46,14 @@ class ObjekPajakResource extends Resource
                 ->relationship(
                     name: 'jp',
                     titleAttribute: 'jp_nama'
-                )
+                ),
+            Forms\Components\Select::make('op_status')
+                ->label('Status')
+                ->options([
+                    '1' => 'Aktif',
+                    '0' => 'Tutup'
+                ])
+                ->native(false)
         ]);
     }
 
@@ -64,6 +71,9 @@ class ObjekPajakResource extends Resource
                 ->label('Pemilik'),
                 Tables\Columns\TextColumn::make('jp.jp_nama')
                 ->label('Jenis'),
+                Tables\Columns\IconColumn::make('op_status')
+                ->label('Is Aktif')
+                ->boolean()
             ])
             ->filters([
                 //

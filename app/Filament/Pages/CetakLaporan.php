@@ -44,7 +44,7 @@ class CetakLaporan extends Page implements HasForms
                 ->columnSpan(1),
                 Select::make('objekpajak')
                 ->label('Objek Pajak')
-                ->options(LaporanOmset::where('userinput', Auth::id())->pluck('op_nama', 'objek_id'))
+                ->options(LaporanOmset::where('userinput', Auth::id())->where('op_status', 1)->pluck('op_nama', 'objek_id'))
                 ->columnSpan(1),
             ])
             ->columns(3)

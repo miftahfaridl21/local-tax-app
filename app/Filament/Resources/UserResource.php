@@ -19,6 +19,9 @@ class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
+    protected static ?string $navigationLabel = 'Pengguna';
+    protected static ?string $pluralModelLabel = 'Pengguna';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -44,8 +47,9 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('password')
                 ->password()
                 ->revealable()
+                ->required(fn (string $context): bool => $context === 'create')
+                ->dehydrated(fn ($state) => filled($state))
                 ->label('Password')
-                ->required(),
             ]);
     }
 
@@ -61,6 +65,8 @@ class UserResource extends Resource
                 ->label('Nama'),
                 Tables\Columns\TextColumn::make('alamat_lengkap')
                 ->label('Alamat'),
+                Tables\Columns\TextColumn::make('email')
+                ->label('Email'),
                 Tables\Columns\TextColumn::make('role')
                 ->label('Role')
             ])
