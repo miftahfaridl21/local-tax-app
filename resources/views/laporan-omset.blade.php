@@ -33,9 +33,20 @@
 </head>
 <body>
     <div class="header">
-        <p style="font-size: 18px">PEMERINTAH KOTA PROBOLINGGO</p>
-        <p style="font-size: 16px">BADAN PENDAPATAN, PENGELOLAAN KEUANGAN, DAN ASET DAERAH</p>
-        <p style="font-size: 12px">Jalan Panglima Sudirman No.19 Telp. (0335) 436437 Kode pos 67213</p>
+        <table>
+            <tr>
+                <td width="40%">
+                    <img src="assets/images/pemkot.png" width="90" height="100" />
+                </td>
+                <td width="20">&nbsp;</td>
+                <td class="header" width="40%">
+                    <p style="font-size: 18px">PEMERINTAH KOTA PROBOLINGGO</p>
+                    <p style="font-size: 16px">BADAN PENDAPATAN, PENGELOLAAN KEUANGAN, DAN ASET DAERAH</p>
+                    <p style="font-size: 12px">Jalan Panglima Sudirman No.19 Telp. (0335) 436437 Kode pos 67213</p>
+                </td>
+            </tr>
+        </table>
+        
     </div>
     <hr>
     <div>
